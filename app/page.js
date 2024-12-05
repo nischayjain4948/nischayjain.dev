@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import ProjectCard from './components/ProjectCard';
 import Image from 'next/image'; // For optimized image loading
 import Link from 'next/link'; // Import Link from Next.js
@@ -47,7 +47,7 @@ export default function Home() {
             Software Engineer
           </p>
           <p className="mt-4 text-sm sm:text-lg text-gray-600">
-            I'm a software engineer passionate about building innovative web
+            I&apos;m a software engineer passionate about building innovative web
             applications.
           </p>
         </div>
@@ -70,17 +70,18 @@ export default function Home() {
             { icon: 'tailwindcss-plain', label: 'Tailwind CSS', level: 80 },
             { icon: 'express-original', label: 'Express.js', level: 85 },
             { icon: 'amazonwebservices-plain', label: 'AWS', level: 85 },
-            
           ].map((skill, index) => (
             <div
               key={index}
               className="text-center transform hover:scale-105 transition-transform"
             >
               {skill.icon === 'prisma' ? (
-                <img
+                <Image
                   src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/prisma.svg"
                   alt={skill.label}
-                  className="w-8 h-8 mx-auto"
+                  width={32} // Set appropriate width and height for the image
+                  height={32}
+                  className="mx-auto"
                 />
               ) : (
                 <i
@@ -113,37 +114,34 @@ export default function Home() {
         </section>
 
         {/* Social Media Section */}
-      
       </section>
 
       <h2 className="text-xl sm:text-2xl font-bold mt-10 text-gray-800 relative z-10 text-center">
-  Connect With Me
-</h2>
+        Connect With Me
+      </h2>
       <div className="mt-10 space-x-4 sm:space-x-6 flex justify-center">
-          <Link
-            href="https://www.linkedin.com/in/nischay-jain-799998213"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="devicon-linkedin-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
-          </Link>
-          <Link
-            href="https://github.com/nischayjain4948"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="devicon-github-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
-          </Link>
-          <Link
-            href="https://x.com/Nischay_jn?t=5dYj7_3ixaAF3w6XCFFpww&s=08"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="devicon-twitter-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
-          </Link>
-        </div>
-
-      
+        <Link
+          href="https://www.linkedin.com/in/nischay-jain-799998213"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="devicon-linkedin-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+        </Link>
+        <Link
+          href="https://github.com/nischayjain4948"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="devicon-github-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+        </Link>
+        <Link
+          href="https://x.com/Nischay_jn?t=5dYj7_3ixaAF3w6XCFFpww&s=08"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="devicon-twitter-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+        </Link>
+      </div>
 
       {/* Animation Keyframes */}
       <style jsx>{`
