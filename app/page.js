@@ -33,7 +33,7 @@ export default function Home() {
 
         {/* Profile Section */}
         <div className="relative z-10">
-          <Image
+          <img
             src="/nischay.jpeg" // Replace with your actual profile image
             alt="Profile Picture"
             className="mx-auto rounded-full border-4 border-white"
@@ -76,7 +76,7 @@ export default function Home() {
               className="text-center transform hover:scale-105 transition-transform"
             >
               {skill.icon === 'prisma' ? (
-                <Image
+                <img
                   src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/prisma.svg"
                   alt={skill.label}
                   width={32} // Set appropriate width and height for the image

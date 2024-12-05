@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function ProjectCard({ title, description, link, image }) {
     return (
       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image 
+        <img 
           src={image} 
           alt={title} 
           width={500} 
