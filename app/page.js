@@ -2,7 +2,7 @@
 import ProjectCard from './components/ProjectCard';
 import Image from 'next/image'; // For optimized image loading
 import Link from 'next/link'; // Import Link from Next.js
-import { projectData } from './projectData';
+import {projectData} from './projectData';
 
 export default function Home() {
   return (

@@ -1,5 +1,8 @@
 
 import ProjectCard from "../components/ProjectCard";
+import { projectData } from "../projectData";
+
+
 export default function Projects() {
   return (
     <section className="text-center p-10">
