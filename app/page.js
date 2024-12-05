@@ -1,101 +1,168 @@
-import Image from "next/image";
+"use client"
+import ProjectCard from './components/ProjectCard';
+import Image from 'next/image'; // For optimized image loading
+import Link from 'next/link'; // Import Link from Next.js
+import { projectData } from './projectData';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <section className="text-center p-6 sm:p-10 bg-gray-100 relative overflow-hidden">
+        {/* Background with additional coding logos */}
+        <div className="absolute inset-0 z-0 opacity-20 bg-gradient-to-b from-transparent to-black">
+          <div className="absolute inset-0 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+            {[
+              'javascript-plain',
+              'nextjs-original',
+              'nodejs-plain',
+              'mongodb-plain',
+              'prisma-plain',
+              'postgresql-plain',
+              'react-plain',
+              'docker-plain',
+              'git-plain',
+              'tailwindcss-plain',
+              'express-original',
+            ].map((icon, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <i className={`devicon-${icon} colored text-3xl sm:text-5xl`}></i>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        {/* Profile Section */}
+        <div className="relative z-10">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/nischay.jpeg" // Replace with your actual profile image
+            alt="Profile Picture"
+            className="mx-auto rounded-full border-4 border-white"
+            width={150}
+            height={150}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <h1 className="text-2xl sm:text-4xl font-bold mt-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-green-400 to-purple-400 animate-gradient-text">
+            Nischay Jain
+          </h1>
+          <p className="mt-2 text-sm sm:text-lg text-gray-400">
+            Software Engineer
+          </p>
+          <p className="mt-4 text-sm sm:text-lg text-gray-600">
+            I'm a software engineer passionate about building innovative web
+            applications.
+          </p>
+        </div>
+
+        {/* Skills Section */}
+        <h2 className="text-xl sm:text-2xl font-bold mt-10 text-gray-800 relative z-10">
+          My Skills
+        </h2>
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6 relative z-10">
+          {[
+            { icon: 'javascript-plain', label: 'JavaScript', level: 90 },
+            { icon: 'nextjs-original', label: 'Next.js', level: 85 },
+            { icon: 'nodejs-plain', label: 'Node.js', level: 88 },
+            { icon: 'mongodb-plain', label: 'MongoDB', level: 75 },
+            { icon: 'prisma', label: 'Prisma', level: 80 },
+            { icon: 'postgresql-plain', label: 'PostgreSQL', level: 70 },
+            { icon: 'react-plain', label: 'React', level: 85 },
+            { icon: 'docker-plain', label: 'Docker', level: 65 },
+            { icon: 'git-plain', label: 'Git', level: 90 },
+            { icon: 'tailwindcss-plain', label: 'Tailwind CSS', level: 80 },
+            { icon: 'express-original', label: 'Express.js', level: 85 },
+            { icon: 'amazonwebservices-plain', label: 'AWS', level: 85 },
+            
+          ].map((skill, index) => (
+            <div
+              key={index}
+              className="text-center transform hover:scale-105 transition-transform"
+            >
+              {skill.icon === 'prisma' ? (
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/prisma.svg"
+                  alt={skill.label}
+                  className="w-8 h-8 mx-auto"
+                />
+              ) : (
+                <i
+                  className={`devicon-${skill.icon} colored text-3xl sm:text-4xl`}
+                ></i>
+              )}
+              <p className="text-xs sm:text-sm mt-2">{skill.label}</p>
+              {/* Skill level bar */}
+              <div className="mt-2 w-full h-2 bg-gray-300 rounded">
+                <div
+                  className="h-full bg-green-400 rounded"
+                  style={{ width: `${skill.level}%` }}
+                ></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Projects Section */}
+        <section className="container mx-auto p-6 sm:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+          {projectData.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              link={project.link}
+              image={project.image}
+            />
+          ))}
+        </section>
+
+        {/* Social Media Section */}
+      
+      </section>
+
+      <h2 className="text-xl sm:text-2xl font-bold mt-10 text-gray-800 relative z-10 text-center">
+  Connect With Me
+</h2>
+      <div className="mt-10 space-x-4 sm:space-x-6 flex justify-center">
+          <Link
+            href="https://www.linkedin.com/in/nischay-jain-799998213"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="devicon-linkedin-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+          </Link>
+          <Link
+            href="https://github.com/nischayjain4948"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="devicon-github-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+          </Link>
+          <Link
+            href="https://x.com/Nischay_jn?t=5dYj7_3ixaAF3w6XCFFpww&s=08"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="devicon-twitter-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+          </Link>
+        </div>
+
+      
+
+      {/* Animation Keyframes */}
+      <style jsx>{`
+        @keyframes gradient-text {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        .animate-gradient-text {
+          background-size: 200% 200%;
+          animation: gradient-text 3s linear infinite;
+        }
+      `}</style>
+    </>
   );
 }
