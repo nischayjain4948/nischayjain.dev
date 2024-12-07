@@ -37,7 +37,7 @@ export default function Home() {
             src="/nischay.jpeg" // Replace with your actual profile image
             alt="Profile Picture"
             className="mx-auto rounded-full border-4 border-white"
-            width={150}
+            width={200}
             height={150}
           />
           <h1 className="text-2xl sm:text-4xl font-bold mt-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-green-400 to-purple-400 animate-gradient-text">
@@ -120,28 +120,36 @@ export default function Home() {
         Connect With Me
       </h2>
       <div className="mt-10 space-x-4 sm:space-x-6 flex justify-center">
-        <Link
-          href="https://www.linkedin.com/in/nischay-jain-799998213"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="devicon-linkedin-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
-        </Link>
-        <Link
-          href="https://github.com/nischayjain4948"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="devicon-github-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
-        </Link>
-        <Link
-          href="https://x.com/Nischay_jn?t=5dYj7_3ixaAF3w6XCFFpww&s=08"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="devicon-twitter-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
-        </Link>
-      </div>
+  <Link
+    href="https://www.linkedin.com/in/nischay-jain-799998213"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="devicon-linkedin-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+  </Link>
+  <Link
+    href="https://github.com/nischayjain4948"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="devicon-github-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+  </Link>
+  <Link
+    href="https://x.com/Nischay_jn?t=5dYj7_3ixaAF3w6XCFFpww&s=08"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="devicon-twitter-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+  </Link>
+  <Link
+    href="mailto:nischayjain4948@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="devicon-google-plain colored text-3xl sm:text-4xl cursor-pointer"></i>
+  </Link>
+</div>
+
 
       {/* Animation Keyframes */}
       <style jsx>{`
