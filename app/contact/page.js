@@ -2,6 +2,7 @@
 export default function Contact() {
   return (
     <section className="text-center p-10">
+      
       <h1 className="text-4xl font-bold">Contact Me</h1>
       <p className="text-lg mt-4 text-gray-600">
         Feel free to reach out to me for any queries, collaboration, or freelance opportunities!
